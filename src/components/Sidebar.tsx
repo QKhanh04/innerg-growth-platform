@@ -1,18 +1,14 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  Search, 
-  Calendar, 
-  FolderOpen, 
-  Heart, 
-  User, 
-  Settings, 
-  Zap,
-  BarChart3,
-  BookOpen,
-  GraduationCap,
-  Award
+import {
+  LayoutDashboard,
+  Search,
+  Calendar,
+  FolderOpen,
+  Heart,
+  User,
+  Settings,
+  Zap
 } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
 
@@ -23,8 +19,6 @@ const navItems = [
   { icon: FolderOpen, label: 'Resource Hub', path: '/resources' },
   { icon: Heart, label: 'Wishlist', path: '/wishlist' },
   { icon: User, label: 'Profile', path: '/profile' },
-  { icon: BarChart3, label: 'Analytics', path: '/analytics' },
-  { icon: GraduationCap, label: 'Mentor Portal', path: '/mentor' },
 ];
 
 export function Sidebar() {
@@ -51,8 +45,8 @@ export function Sidebar() {
               to={item.path}
               className={cn(
                 "flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200",
-                isActive 
-                  ? "bg-primary/10 text-primary font-bold border-l-4 border-primary rounded-l-none -ml-4 pl-7" 
+                isActive
+                  ? "bg-primary/10 text-primary font-bold border-l-4 border-primary rounded-l-none -ml-4 pl-7"
                   : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
               )}
             >

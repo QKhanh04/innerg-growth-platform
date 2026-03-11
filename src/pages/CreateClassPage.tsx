@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Header } from '@/src/components/Header';
 import { Sidebar } from '@/src/components/Sidebar';
-import { 
-  ArrowLeft, 
-  Plus, 
-  Image as ImageIcon, 
-  Calendar, 
-  Clock, 
-  Users, 
-  FileText, 
-  X, 
+import {
+  ArrowLeft,
+  Plus,
+  Image as ImageIcon,
+  Calendar,
+  Clock,
+  Users,
+  FileText,
+  X,
   Check,
   Zap,
   GraduationCap
@@ -27,7 +27,6 @@ export default function CreateClassPage() {
 
   return (
     <div className="flex min-h-screen bg-background-light">
-      <Sidebar />
       <main className="flex-1 flex flex-col overflow-hidden">
         <Header />
         <div className="flex-1 overflow-y-auto p-8 lg:p-12">
@@ -81,9 +80,9 @@ function StepOne({ onNext }: any) {
       <div className="space-y-8">
         <div className="flex flex-col gap-2">
           <label className="text-sm font-black text-slate-700">Class Title</label>
-          <input 
-            type="text" 
-            placeholder="e.g. Advanced Figma Auto-Layout" 
+          <input
+            type="text"
+            placeholder="e.g. Advanced Figma Auto-Layout"
             className="w-full h-16 rounded-2xl border-slate-200 bg-slate-50 px-6 focus:border-primary focus:ring-primary font-bold text-lg outline-none transition-all"
           />
         </div>
@@ -110,8 +109,8 @@ function StepOne({ onNext }: any) {
 
         <div className="flex flex-col gap-2">
           <label className="text-sm font-black text-slate-700">Description</label>
-          <textarea 
-            placeholder="What will students learn in this class?" 
+          <textarea
+            placeholder="What will students learn in this class?"
             className="w-full h-40 rounded-2xl border-slate-200 bg-slate-50 p-6 focus:border-primary focus:ring-primary font-medium outline-none transition-all resize-none"
           />
         </div>
@@ -127,7 +126,7 @@ function StepOne({ onNext }: any) {
         </div>
       </div>
 
-      <button 
+      <button
         onClick={onNext}
         className="w-full bg-primary text-slate-900 py-5 rounded-2xl font-black text-lg shadow-xl shadow-primary/20 hover:brightness-105 transition-all active:scale-95"
       >
@@ -277,7 +276,7 @@ function StepFour({ onPrev }: any) {
 
       <div className="flex gap-4">
         <button onClick={onPrev} className="flex-1 bg-slate-50 text-slate-500 py-5 rounded-2xl font-black text-lg hover:bg-slate-100 transition-all active:scale-95">Back</button>
-        <button 
+        <button
           onClick={() => navigate('/mentor')}
           className="flex-[2] bg-primary text-slate-900 py-5 rounded-2xl font-black text-lg shadow-xl shadow-primary/20 hover:brightness-105 transition-all active:scale-95"
         >

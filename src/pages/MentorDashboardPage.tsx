@@ -1,15 +1,15 @@
 import React from 'react';
 import { Header } from '@/src/components/Header';
 import { Sidebar } from '@/src/components/Sidebar';
-import { 
-  GraduationCap, 
-  Users, 
-  Star, 
-  Zap, 
-  Plus, 
-  BarChart3, 
-  Clock, 
-  MessageSquare, 
+import {
+  GraduationCap,
+  Users,
+  Star,
+  Zap,
+  Plus,
+  BarChart3,
+  Clock,
+  MessageSquare,
   ChevronRight,
   MoreVertical,
   FileText,
@@ -23,7 +23,6 @@ import { Link } from 'react-router-dom';
 export default function MentorDashboardPage() {
   return (
     <div className="flex min-h-screen bg-background-light">
-      <Sidebar />
       <main className="flex-1 flex flex-col overflow-hidden">
         <Header />
         <div className="flex-1 overflow-y-auto p-8 lg:p-12">
@@ -40,7 +39,7 @@ export default function MentorDashboardPage() {
                 <h2 className="text-4xl font-black tracking-tight">Mentor Dashboard</h2>
                 <p className="text-slate-500 text-lg font-medium mt-2">Manage your classes, track student progress, and view your performance</p>
               </div>
-              <Link 
+              <Link
                 to="/mentor/create"
                 className="flex items-center justify-center gap-3 bg-primary text-slate-900 px-8 py-4 rounded-2xl font-black shadow-xl shadow-primary/20 hover:brightness-105 active:scale-95 transition-all"
               >
@@ -66,21 +65,21 @@ export default function MentorDashboardPage() {
                 </div>
 
                 <div className="space-y-6">
-                  <MentorClassCard 
+                  <MentorClassCard
                     title="Figma Auto-Layout Masterclass"
                     students={124}
                     rating="4.9"
                     status="Ongoing"
                     nextSession="Tomorrow, 10:00 AM"
                   />
-                  <MentorClassCard 
+                  <MentorClassCard
                     title="Design Systems at Scale"
                     students={450}
                     rating="4.8"
                     status="Ongoing"
                     nextSession="Fri, Sep 22, 02:00 PM"
                   />
-                  <MentorClassCard 
+                  <MentorClassCard
                     title="UX Research Methods"
                     students={86}
                     rating="5.0"
@@ -107,14 +106,14 @@ export default function MentorDashboardPage() {
                   <div className="h-48 flex items-end justify-between gap-2 px-2">
                     {[40, 70, 45, 90, 65, 80, 55].map((h, i) => (
                       <div key={i} className="flex-1 flex flex-col items-center gap-2">
-                        <motion.div 
+                        <motion.div
                           initial={{ height: 0 }}
                           animate={{ height: `${h}%` }}
                           className="w-full bg-primary/20 rounded-t-lg group-hover:bg-primary transition-colors relative"
                         >
                           <div className="absolute inset-x-0 bottom-0 bg-primary rounded-t-lg" style={{ height: '30%' }}></div>
                         </motion.div>
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">Day {i+1}</span>
+                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">Day {i + 1}</span>
                       </div>
                     ))}
                   </div>

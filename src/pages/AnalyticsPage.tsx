@@ -1,13 +1,13 @@
 import React from 'react';
 import { Header } from '@/src/components/Header';
 import { Sidebar } from '@/src/components/Sidebar';
-import { 
-  BarChart3, 
-  Users, 
-  GraduationCap, 
-  Clock, 
-  TrendingUp, 
-  TrendingDown, 
+import {
+  BarChart3,
+  Users,
+  GraduationCap,
+  Clock,
+  TrendingUp,
+  TrendingDown,
   ChevronRight,
   Download,
   Filter,
@@ -24,7 +24,6 @@ import { cn } from '@/src/lib/utils';
 export default function AnalyticsPage() {
   return (
     <div className="flex min-h-screen bg-background-light">
-      <Sidebar />
       <main className="flex-1 flex flex-col overflow-hidden">
         <Header />
         <div className="flex-1 overflow-y-auto p-8 lg:p-12">
@@ -55,37 +54,37 @@ export default function AnalyticsPage() {
 
             {/* High-Level Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <AnalyticsStatCard 
-                label="Total Classes" 
-                value="156" 
-                trend="+12%" 
-                isUp={true} 
-                icon={GraduationCap} 
-                color="blue" 
+              <AnalyticsStatCard
+                label="Total Classes"
+                value="156"
+                trend="+12%"
+                isUp={true}
+                icon={GraduationCap}
+                color="blue"
               />
-              <AnalyticsStatCard 
-                label="Active Learners" 
-                value="2,450" 
-                trend="+8%" 
-                isUp={true} 
-                icon={Users} 
-                color="primary" 
+              <AnalyticsStatCard
+                label="Active Learners"
+                value="2,450"
+                trend="+8%"
+                isUp={true}
+                icon={Users}
+                color="primary"
               />
-              <AnalyticsStatCard 
-                label="Learning Hours" 
-                value="12.8k" 
-                trend="-2%" 
-                isUp={false} 
-                icon={Clock} 
-                color="amber" 
+              <AnalyticsStatCard
+                label="Learning Hours"
+                value="12.8k"
+                trend="-2%"
+                isUp={false}
+                icon={Clock}
+                color="amber"
               />
-              <AnalyticsStatCard 
-                label="Cost Saved" 
-                value="$45.2k" 
-                trend="+24%" 
-                isUp={true} 
-                icon={ShieldCheck} 
-                color="emerald" 
+              <AnalyticsStatCard
+                label="Cost Saved"
+                value="$45.2k"
+                trend="+24%"
+                isUp={true}
+                icon={ShieldCheck}
+                color="emerald"
               />
             </div>
 
@@ -111,18 +110,18 @@ export default function AnalyticsPage() {
                     {[30, 50, 40, 80, 60, 90, 70, 85, 45, 65, 55, 75].map((h, i) => (
                       <div key={i} className="flex-1 flex flex-col items-center gap-3">
                         <div className="w-full space-y-1">
-                          <motion.div 
+                          <motion.div
                             initial={{ height: 0 }}
                             animate={{ height: `${h}%` }}
                             className="w-full bg-slate-100 rounded-t-lg"
                           />
-                          <motion.div 
+                          <motion.div
                             initial={{ height: 0 }}
                             animate={{ height: `${h * 0.6}%` }}
                             className="w-full bg-primary rounded-t-lg"
                           />
                         </div>
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">M{i+1}</span>
+                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">M{i + 1}</span>
                       </div>
                     ))}
                   </div>
@@ -255,7 +254,7 @@ function CoverageItem({ label, percent }: any) {
         <span className="text-primary">{percent}%</span>
       </div>
       <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-        <motion.div 
+        <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${percent}%` }}
           className="h-full bg-primary rounded-full shadow-[0_0_10px_rgba(19,236,182,0.5)]"
