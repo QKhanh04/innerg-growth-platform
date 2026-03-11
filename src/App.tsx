@@ -35,7 +35,6 @@ export default function App() {
           <Route path="/mentor" element={<MentorDashboardPage />} />
           <Route path="/mentor/create" element={<CreateClassPage />} />
           <Route path="/analytics" element={<AnalyticsPage />} />
-
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

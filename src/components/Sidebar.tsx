@@ -32,8 +32,8 @@ export function Sidebar() {
   const { role, setRole } = useRole();
 
   // Filter items based on user's current role or "admin" who sees everything
-  const visibleNavItems = navItems.filter(item =>
-    role === 'admin' || (item.roles as string[]).includes(role)
+  const visibleNavItems = navItems.filter(item => 
+    role === 'admin' || item.roles.includes(role)
   );
 
   return (
@@ -74,8 +74,8 @@ export function Sidebar() {
           <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block">
             Dev Mode: Switch Role
           </label>
-          <select
-            value={role}
+          <select 
+            value={role} 
             onChange={(e) => setRole(e.target.value as Role)}
             className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2"
           >
