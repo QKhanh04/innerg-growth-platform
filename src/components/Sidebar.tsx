@@ -15,20 +15,28 @@ import {
   Award
 } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
+import { useRole, Role } from '@/src/lib/RoleContext';
 
 const navItems = [
-  { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
-  { icon: Search, label: 'Explore', path: '/explore' },
-  { icon: Calendar, label: 'My Schedule', path: '/schedule' },
-  { icon: FolderOpen, label: 'Resource Hub', path: '/resources' },
-  { icon: Heart, label: 'Wishlist', path: '/wishlist' },
-  { icon: User, label: 'Profile', path: '/profile' },
-  { icon: BarChart3, label: 'Analytics', path: '/analytics' },
-  { icon: GraduationCap, label: 'Mentor Portal', path: '/mentor' },
+  { icon: LayoutDashboard, label: 'Home Feed', path: '/dashboard', roles: ['mentee'] },
+  { icon: BarChart3, label: 'Analytics', path: '/analytics', roles: ['hr'] },
+  { icon: LayoutDashboard, label: 'Mentor Dashboard', path: '/mentor', roles: ['mentor'] },
+  { icon: BookOpen, label: 'Create Class', path: '/mentor/create', roles: ['mentor', 'hr'] },
+  { icon: Search, label: 'Explore / Marketplace', path: '/explore', roles: ['mentee', 'mentor', 'hr'] },
+  { icon: Calendar, label: 'My Schedule', path: '/schedule', roles: ['mentee', 'mentor'] },
+  { icon: Heart, label: 'Learning Wishlist', path: '/wishlist', roles: ['mentee', 'hr'] },
+  { icon: FolderOpen, label: 'Resource Hub', path: '/resources', roles: ['mentee', 'mentor', 'hr', 'admin'] },
+  { icon: User, label: 'Profile', path: '/profile', roles: ['mentee', 'mentor', 'hr', 'admin'] },
 ];
 
 export function Sidebar() {
   const location = useLocation();
+  const { role, setRole } = useRole();
+
+  // Filter items based on user's current role or "admin" who sees everything
+  const visibleNavItems = navItems.filter(item => 
+    role === 'admin' || item.roles.includes(role)
+  );
 
   return (
     <aside className="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
@@ -42,8 +50,8 @@ export function Sidebar() {
         </div>
       </div>
 
-      <nav className="flex-1 px-4 py-4 space-y-1">
-        {navItems.map((item) => {
+      <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
+        {visibleNavItems.map((item) => {
           const isActive = location.pathname === item.path;
           return (
             <Link
@@ -63,7 +71,24 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="p-4 border-t border-slate-100">
+      <div className="p-4 border-t border-slate-100 space-y-3">
+        <div className="px-3">
+          <label className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 block">
+            Dev Mode: Switch Role
+          </label>
+          <select 
+            value={role} 
+            onChange={(e) => setRole(e.target.value as Role)}
+            className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2"
+          >
+            <option value="mentee">Mentee (Learner)</option>
+            <option value="mentor">Mentor (Teacher)</option>
+            <option value="hr">HR/Admin (Manager)</option>
+            <option value="admin">Super Admin</option>
+            <option value="guest">Guest</option>
+          </select>
+        </div>
+
         <Link
           to="/settings"
           className="flex items-center gap-3 px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg transition-colors"
@@ -71,7 +96,7 @@ export function Sidebar() {
           <Settings className="size-5" />
           <span className="text-sm font-medium">Settings</span>
         </Link>
-        <div className="mt-4 flex items-center gap-3 p-2 bg-slate-50 rounded-xl">
+        <div className="mt-2 flex items-center gap-3 p-2 bg-slate-50 rounded-xl">
           <img
             src="https://picsum.photos/seed/alex/100/100"
             alt="User"
@@ -80,7 +105,7 @@ export function Sidebar() {
           />
           <div className="overflow-hidden">
             <p className="text-sm font-bold text-slate-900 truncate">Alex Rivera</p>
-            <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Senior Lead</p>
+            <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider">{role.toUpperCase()}</p>
           </div>
         </div>
       </div>
