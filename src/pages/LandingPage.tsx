@@ -2,6 +2,7 @@ import React from 'react';
 import { Zap, ArrowRight, Search, Users, ShieldCheck, Github } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import logo from '@/src/assets/logo.png';
 
 export default function LandingPage() {
   return (
@@ -69,8 +70,8 @@ export default function LandingPage() {
         >
           {/* Logo */}
           <div className="mb-12 flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/30">
-              <Zap className="size-7 text-slate-900 fill-current" />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-lg border border-slate-100 p-2">
+              <img src={logo} alt="InnerG Logo" className="size-full object-contain" />
             </div>
             <h2 className="text-3xl tracking-tight text-slate-900">
               <span className="font-black">Inner</span><span className="font-black text-primary">G</span>

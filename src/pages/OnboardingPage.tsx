@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Camera, Edit2, Search, Plus, Check, X, Zap, PartyPopper } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/src/lib/utils';
+import logo from '@/src/assets/logo.png';
 
 export default function OnboardingPage() {
   const [step, setStep] = useState(1);
@@ -17,8 +18,8 @@ export default function OnboardingPage() {
     <div className="bg-background-light min-h-screen font-sans text-slate-900">
       <header className="flex items-center justify-between border-b border-primary/10 px-10 py-4 bg-white sticky top-0 z-10">
         <div className="flex items-center gap-3">
-          <div className="size-10 bg-primary rounded-xl flex items-center justify-center text-slate-900 shadow-sm">
-            <Zap className="size-6 fill-current" />
+          <div className="size-10 bg-white rounded-xl flex items-center justify-center text-slate-900 shadow-sm border border-slate-100 p-1.5">
+            <img src={logo} alt="InnerG Logo" className="size-full object-contain" />
           </div>
           <h2 className="text-xl font-black tracking-tight">InnerG</h2>
         </div>

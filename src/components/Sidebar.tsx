@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
 import { useRole, Role } from '@/src/lib/RoleContext';
+import logo from '@/src/assets/logo.png';
 
 const navItems = [
   { icon: LayoutDashboard, label: 'Home Feed', path: '/dashboard', roles: ['mentee'] },
@@ -41,8 +42,8 @@ export function Sidebar() {
   return (
     <aside className="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
       <div className="p-6 flex items-center gap-3">
-        <div className="size-10 bg-primary rounded-xl flex items-center justify-center text-slate-900 shadow-sm">
-          <Zap className="size-6 fill-current" />
+        <div className="size-10 bg-white rounded-xl flex items-center justify-center text-slate-900 shadow-sm overflow-hidden p-1 border border-slate-100">
+          <img src={logo} alt="InnerG Logo" className="size-full object-contain" />
         </div>
         <div>
           <h1 className="text-slate-900 font-bold text-lg leading-none">InnerG</h1>
