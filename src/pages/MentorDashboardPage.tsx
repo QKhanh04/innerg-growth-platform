@@ -23,6 +23,7 @@ import { Link } from 'react-router-dom';
 export default function MentorDashboardPage() {
   return (
     <div className="flex min-h-screen bg-background-light">
+      <Sidebar />
       <main className="flex-1 flex flex-col overflow-hidden">
         <Header />
         <div className="flex-1 overflow-y-auto p-8 lg:p-12">
