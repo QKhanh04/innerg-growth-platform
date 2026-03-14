@@ -1,33 +1,31 @@
 import React from 'react';
-import { Zap, ArrowRight, Search, Users, ShieldCheck, Github } from 'lucide-react';
+import { Search, Users, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import logo from '@/src/assets/logo.png';
+import mascot from '@/src/assets/mascot.png';
 
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen w-full flex-col lg:flex-row bg-white">
       {/* Left Section: Hero */}
       <div className="relative hidden w-full items-center justify-center p-12 lg:flex lg:w-[55%] subtle-gradient overflow-hidden">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           className="max-w-2xl relative z-10"
         >
           <div className="mb-12 flex justify-center">
-            <div className="relative h-80 w-full rounded-2xl bg-primary/10 flex items-center justify-center overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10">
-              <img 
-                src="https://picsum.photos/seed/team/1200/800" 
-                alt="Hero" 
-                className="absolute inset-0 size-full object-cover opacity-40 mix-blend-overlay"
-                referrerPolicy="no-referrer"
+            <div className="h-80 w-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #e6fff9 100%)' }}>
+              <img
+                src={mascot}
+                alt="InnerG Mascot"
+                className="h-full object-contain"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-              <Zap className="size-24 text-primary drop-shadow-glow" />
             </div>
           </div>
-          
+
           <h1 className="mb-6 text-6xl font-black tracking-tight text-slate-900 leading-[1.1]">
             Unlock the knowledge <br />
             <span className="text-primary">within your team</span>
@@ -37,24 +35,24 @@ export default function LandingPage() {
           </p>
 
           <div className="grid gap-8">
-            <FeatureItem 
-              icon={Search} 
-              title="Knowledge Discovery" 
-              description="Find answers instantly across all your company documents and silos." 
+            <FeatureItem
+              icon={Search}
+              title="Knowledge Discovery"
+              description="Find answers instantly across all your company documents and silos."
             />
-            <FeatureItem 
-              icon={Users} 
-              title="Team Synergy" 
-              description="Bridge the gap between departments with shared, searchable intelligence." 
+            <FeatureItem
+              icon={Users}
+              title="Team Synergy"
+              description="Bridge the gap between departments with shared, searchable intelligence."
             />
-            <FeatureItem 
-              icon={ShieldCheck} 
-              title="Secure Insights" 
-              description="Enterprise-grade security protocols ensuring your data remains private." 
+            <FeatureItem
+              icon={ShieldCheck}
+              title="Secure Insights"
+              description="Enterprise-grade security protocols ensuring your data remains private."
             />
           </div>
         </motion.div>
-        
+
         {/* Background Decorations */}
         <div className="absolute -top-24 -left-24 size-96 bg-primary/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-24 -right-24 size-96 bg-primary/5 rounded-full blur-3xl"></div>
@@ -62,7 +60,7 @@ export default function LandingPage() {
 
       {/* Right Section: Login Form */}
       <div className="flex w-full flex-col items-center justify-center bg-white px-6 py-12 lg:w-[45%] lg:px-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -85,13 +83,13 @@ export default function LandingPage() {
 
           {/* SSO Buttons */}
           <div className="flex flex-col gap-4">
-            <SSOButton 
-              icon="https://www.google.com/favicon.ico" 
-              label="Continue with Google" 
+            <SSOButton
+              icon="https://www.google.com/favicon.ico"
+              label="Continue with Google"
             />
-            <SSOButton 
-              icon="https://www.microsoft.com/favicon.ico" 
-              label="Continue with Microsoft" 
+            <SSOButton
+              icon="https://www.microsoft.com/favicon.ico"
+              label="Continue with Microsoft"
             />
           </div>
 
@@ -105,9 +103,9 @@ export default function LandingPage() {
           <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
             <div className="space-y-2">
               <label className="block text-sm font-bold text-slate-700" htmlFor="email">Work Email</label>
-              <input 
+              <input
                 id="email"
-                type="email" 
+                type="email"
                 placeholder="name@company.com"
                 className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-4 focus:border-primary focus:ring-primary transition-all outline-none"
               />
@@ -117,9 +115,9 @@ export default function LandingPage() {
                 <label className="block text-sm font-bold text-slate-700" htmlFor="password">Password</label>
                 <a href="#" className="text-xs font-bold text-primary hover:underline">Forgot password?</a>
               </div>
-              <input 
+              <input
                 id="password"
-                type="password" 
+                type="password"
                 placeholder="••••••••"
                 className="w-full rounded-xl border-slate-200 bg-slate-50 px-4 py-4 focus:border-primary focus:ring-primary transition-all outline-none"
               />
@@ -138,7 +136,7 @@ export default function LandingPage() {
               </label>
             </div>
 
-            <Link 
+            <Link
               to="/onboarding"
               className="flex w-full items-center justify-center rounded-2xl bg-primary py-4 text-center font-black text-slate-900 shadow-xl shadow-primary/20 transition-all hover:brightness-105 active:scale-[0.98]"
             >
@@ -147,7 +145,7 @@ export default function LandingPage() {
           </form>
 
           <p className="mt-10 text-center text-sm text-slate-500 font-medium">
-            Don't have an account? 
+            Don't have an account?
             <a href="#" className="ml-1 font-black text-primary hover:underline">Contact Sales</a>
           </p>
 
