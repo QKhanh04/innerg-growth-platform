@@ -17,7 +17,7 @@ export default function LandingPage() {
           className="max-w-2xl relative z-10"
         >
           <div className="mb-12 flex justify-center">
-            <div className="h-80 w-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0fdfa 50%, #e6fff9 100%)' }}>
+            <div className="h-80 w-full flex items-center justify-center">
               <img
                 src={mascot}
                 alt="InnerG Mascot"
