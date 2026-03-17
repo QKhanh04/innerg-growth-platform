@@ -92,65 +92,180 @@ export default function AnalyticsPage() {
             <div className="flex flex-col xl:flex-row gap-10">
               {/* Main Content: Charts & Activity */}
               <div className="flex-1 space-y-10">
-                {/* Learning Activity Chart Placeholder */}
-                <div className="bg-white rounded-[40px] p-10 border border-slate-200 shadow-sm">
+                {/* Learning Activity Chart */}
+                <div className="bg-white rounded-[40px] p-10 border border-slate-200 shadow-sm relative overflow-hidden group">
                   <div className="flex items-center justify-between mb-10">
-                    <h3 className="text-2xl font-black tracking-tight">Learning Activity</h3>
+                    <div>
+                      <h3 className="text-2xl font-black tracking-tight">Learning Activity</h3>
+                      <p className="text-sm font-medium text-slate-500 mt-1 flex items-center gap-2">
+                        <TrendingUp className="size-4 text-primary" />
+                        +14.2% growth compared to last month
+                      </p>
+                    </div>
                     <div className="flex items-center gap-6">
                       <div className="flex items-center gap-2">
-                        <div className="size-3 rounded-full bg-primary"></div>
-                        <span className="text-xs font-bold text-slate-500">Completed</span>
+                        <div className="size-3 rounded-full bg-primary shadow-[0_0_8px_rgba(19,236,182,0.4)]"></div>
+                        <span className="text-xs font-bold text-slate-500">Skills Learned</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <div className="size-3 rounded-full bg-slate-200"></div>
-                        <span className="text-xs font-bold text-slate-500">Enrolled</span>
+                        <span className="text-xs font-bold text-slate-500">Classes Attended</span>
                       </div>
                     </div>
                   </div>
-                  <div className="h-64 flex items-end justify-between gap-4 px-4">
-                    {[30, 50, 40, 80, 60, 90, 70, 85, 45, 65, 55, 75].map((h, i) => (
-                      <div key={i} className="flex-1 flex flex-col items-center gap-3">
-                        <div className="w-full space-y-1">
-                          <motion.div 
+                  
+                  <div className="relative h-72 w-full mt-4 group">
+                    {/* Y-Axis Labels */}
+                    <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-[10px] font-black text-slate-300 pointer-events-none">
+                      <span>100%</span>
+                      <span>75%</span>
+                      <span>50%</span>
+                      <span>25%</span>
+                      <span>0%</span>
+                    </div>
+
+                    {/* Grid Lines */}
+                    <div className="absolute left-10 right-0 top-0 bottom-8 flex flex-col justify-between pointer-events-none">
+                      {[0, 25, 50, 75, 100].map((_, i) => (
+                        <div key={i} className="h-px w-full bg-slate-50" />
+                      ))}
+                    </div>
+
+                    {/* Chart Area */}
+                    <div className="absolute left-10 right-0 top-0 bottom-8 flex items-end justify-between gap-3 px-2 pt-4">
+                      {[35, 55, 42, 85, 65, 95, 75, 90, 50, 70, 60, 80].map((h, i) => (
+                        <div key={i} className="flex-1 h-full relative group/bar">
+                          {/* Background Bar */}
+                          <motion.div
                             initial={{ height: 0 }}
                             animate={{ height: `${h}%` }}
-                            className="w-full bg-slate-100 rounded-t-lg"
+                            transition={{ delay: i * 0.05, duration: 0.8, ease: "easeOut" }}
+                            className="absolute bottom-0 left-0 right-0 bg-slate-50 group-hover/bar:bg-slate-100 transition-colors rounded-t-lg"
                           />
-                          <motion.div 
+                          {/* Main Bar */}
+                          <motion.div
                             initial={{ height: 0 }}
-                            animate={{ height: `${h * 0.6}%` }}
-                            className="w-full bg-primary rounded-t-lg"
-                          />
+                            animate={{ height: `${h * 0.7}%` }}
+                            transition={{ delay: (i * 0.05) + 0.2, duration: 0.8, ease: "easeOut" }}
+                            className="absolute bottom-0 left-0 right-0 bg-primary/20 group-hover/bar:bg-primary/30 transition-colors rounded-t-lg overflow-hidden"
+                          >
+                             <div className="absolute top-0 left-0 right-0 h-1 bg-primary/40" />
+                          </motion.div>
+                          
+                          {/* Indicator line on hover */}
+                          <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] font-black px-2 py-1 rounded opacity-0 group-hover/bar:opacity-100 transition-all pointer-events-none z-20">
+                            {h}%
+                          </div>
                         </div>
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-tighter">M{i+1}</span>
-                      </div>
-                    ))}
+                      ))}
+
+                      {/* Line Chart Path (SVG Overlay) */}
+                      <svg className="absolute inset-x-0 bottom-0 w-full h-full pointer-events-none z-10 overflow-visible">
+                        <motion.path
+                          initial={{ pathLength: 0, opacity: 0 }}
+                          animate={{ pathLength: 1, opacity: 1 }}
+                          transition={{ duration: 1.5, delay: 0.5 }}
+                          d="M 12 180 L 45 130 L 78 150 L 111 60 L 144 110 L 177 30 L 210 80 L 243 45 L 276 130 L 309 90 L 342 110 L 375 70"
+                          fill="none"
+                          stroke="url(#lineGradient)"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="drop-shadow-[0_4px_8px_rgba(19,236,182,0.3)]"
+                        />
+                        <defs>
+                          <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0%" stopColor="#13ecb6" />
+                            <stop offset="100%" stopColor="#6366f1" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+
+                    {/* X-Axis Labels */}
+                    <div className="absolute left-10 right-0 bottom-0 h-6 flex justify-between px-2">
+                       {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map((m) => (
+                         <span key={m} className="flex-1 text-center text-[10px] font-black text-slate-400 uppercase tracking-tighter self-center">{m}</span>
+                       ))}
+                    </div>
                   </div>
                 </div>
 
                 {/* Top Mentors Table */}
-                <div className="bg-white rounded-[40px] p-10 border border-slate-200 shadow-sm overflow-hidden">
+                <div className="bg-white rounded-[40px] p-10 border border-slate-200 shadow-sm overflow-hidden text-center sm:text-left">
                   <div className="flex items-center justify-between mb-10">
                     <h3 className="text-2xl font-black tracking-tight">Top Mentors</h3>
                     <button className="text-primary text-sm font-bold hover:underline">View All</button>
                   </div>
-                  <table className="w-full text-left border-collapse">
-                    <thead>
-                      <tr className="border-b border-slate-100">
-                        <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest">Mentor</th>
-                        <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest">Department</th>
-                        <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest">Classes</th>
-                        <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest">Rating</th>
-                        <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest">Points</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-50">
-                      <MentorRow name="Alex Rivera" dept="Design" classes={12} rating="4.9" points="8,450" />
-                      <MentorRow name="Sarah Chen" dept="Engineering" classes={8} rating="4.8" points="6,200" />
-                      <MentorRow name="David Kim" dept="Product" classes={15} rating="5.0" points="12,100" />
-                      <MentorRow name="Elena Martinez" dept="Marketing" classes={6} rating="4.7" points="4,800" />
-                    </tbody>
-                  </table>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left border-collapse min-w-[600px]">
+                      <thead>
+                        <tr className="border-b border-slate-100">
+                          <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest">Mentor</th>
+                          <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest">Department</th>
+                          <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest text-center">Classes</th>
+                          <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest text-center">Rating</th>
+                          <th className="pb-6 text-xs font-black text-slate-400 uppercase tracking-widest text-center">Points</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-50">
+                        <MentorRow name="Alex Rivera" dept="Design" classes={12} rating="4.9" points="8,450" />
+                        <MentorRow name="Sarah Chen" dept="Engineering" classes={8} rating="4.8" points="6,200" />
+                        <MentorRow name="David Kim" dept="Product" classes={15} rating="5.0" points="12,100" />
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Company Skill Density Map */}
+                <div className="bg-white rounded-[40px] p-10 border border-slate-200 shadow-sm overflow-hidden">
+                  <div className="flex items-center justify-between mb-10">
+                    <h3 className="text-2xl font-black tracking-tight">Company Skill Map</h3>
+                    <div className="flex items-center gap-4 text-[10px] font-black text-slate-400 uppercase">
+                      <span>Low Density</span>
+                      <div className="flex gap-1">
+                        <div className="size-3 bg-primary/10 rounded-sm" />
+                        <div className="size-3 bg-primary/30 rounded-sm" />
+                        <div className="size-3 bg-primary/60 rounded-sm" />
+                        <div className="size-3 bg-primary/100 rounded-sm" />
+                      </div>
+                      <span>High Density</span>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-6 gap-2">
+                    {/* Headers */}
+                    <div />
+                    {['Design', 'Eng.', 'Product', 'Sales', 'HR'].map(d => (
+                      <div key={d} className="text-center text-[10px] font-black text-slate-400 uppercase py-2">{d}</div>
+                    ))}
+                    
+                    {/* Rows */}
+                    {['Figma', 'React', 'Node.js', 'Stats', 'Agile'].map((skill, ridx) => (
+                      <React.Fragment key={skill}>
+                        <div className="text-right text-[10px] font-black text-slate-400 uppercase py-2 pr-4">{skill}</div>
+                        {[1, 2, 3, 4, 5].map((cidx) => {
+                          const opacity = (ridx + cidx) % 4;
+                          return (
+                            <motion.div
+                              key={cidx}
+                              initial={{ opacity: 0, scale: 0.8 }}
+                              animate={{ opacity: 1, scale: 1 }}
+                              transition={{ delay: (ridx * 5 + cidx) * 0.02 }}
+                              className={cn(
+                                "aspect-square rounded-lg border border-white shadow-inner flex items-center justify-center text-[10px] font-black",
+                                opacity === 0 && "bg-primary/10 text-primary/40",
+                                opacity === 1 && "bg-primary/30 text-primary/60",
+                                opacity === 2 && "bg-primary/60 text-white",
+                                opacity === 3 && "bg-primary text-white"
+                              )}
+                            >
+                               {Math.floor(Math.random() * 20) + 5}%
+                            </motion.div>
+                          );
+                        })}
+                      </React.Fragment>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -176,11 +291,59 @@ export default function AnalyticsPage() {
                   <div className="absolute -bottom-10 -right-10 size-40 bg-primary/10 rounded-full blur-3xl"></div>
                 </div>
 
+                {/* Departmental Progress */}
+                <div className="bg-white rounded-[40px] p-8 border border-slate-200 shadow-sm">
+                  <h3 className="font-black text-lg mb-8 flex items-center gap-2">
+                    <BarChart3 className="size-5 text-primary" />
+                    Dept. Performance
+                  </h3>
+                  <div className="space-y-8">
+                    <div className="relative size-48 mx-auto flex items-center justify-center">
+                      <svg className="size-full -rotate-90">
+                        <circle cx="96" cy="96" r="80" fill="none" stroke="#f1f5f9" strokeWidth="20" />
+                        <motion.circle 
+                          cx="96" cy="96" r="80" 
+                          fill="none" stroke="#13ecb6" strokeWidth="20" 
+                          strokeDasharray="502"
+                          initial={{ strokeDashoffset: 502 }}
+                          animate={{ strokeDashoffset: 502 * (1 - 0.72) }}
+                          transition={{ duration: 1.5, delay: 0.5 }}
+                          strokeLinecap="round"
+                        />
+                        <motion.circle 
+                          cx="96" cy="96" r="80" 
+                          fill="none" stroke="#6366f1" strokeWidth="20" 
+                          strokeDasharray="502"
+                          initial={{ strokeDashoffset: 502 }}
+                          animate={{ strokeDashoffset: 502 * (1 - 0.35) }}
+                          transition={{ duration: 1.5, delay: 0.8 }}
+                          strokeLinecap="round"
+                        />
+                      </svg>
+                      <div className="absolute text-center">
+                         <p className="text-3xl font-black text-slate-900">72%</p>
+                         <p className="text-[10px] font-black text-slate-400 uppercase">Avg. Growth</p>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                       <div className="flex items-center gap-2">
+                          <div className="size-2 rounded-full bg-primary" />
+                          <span className="text-[10px] font-black text-slate-600 uppercase">Eng: 72%</span>
+                       </div>
+                       <div className="flex items-center gap-2">
+                          <div className="size-2 rounded-full bg-indigo-500" />
+                          <span className="text-[10px] font-black text-slate-600 uppercase">Design: 85%</span>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Top Requested Skills */}
                 <div className="bg-white rounded-[40px] p-8 border border-slate-200 shadow-sm">
                   <h3 className="font-black text-lg mb-8 flex items-center gap-2">
                     <Zap className="size-5 text-primary fill-current" />
-                    Top Requested
+                    Hot Skills (Gaps)
                   </h3>
                   <div className="space-y-6">
                     <RequestedSkillItem title="Generative AI" count={128} trend="+15%" />

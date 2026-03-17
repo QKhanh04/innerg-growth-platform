@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, 
   Search, 
@@ -32,12 +32,32 @@ const navItems = [
 
 export function Sidebar() {
   const location = useLocation();
-  const { role, setRole } = useRole();
+  const navigate = useNavigate();
+  const { role, setRole, user } = useRole();
 
   // Filter items based on user's current role or "admin" who sees everything
   const visibleNavItems = navItems.filter(item => 
     role === 'admin' || item.roles.includes(role)
   );
+
+  const handleRoleChange = (newRole: Role) => {
+    setRole(newRole);
+    
+    // Redirect to landing page for the role
+    switch (newRole) {
+      case 'mentor':
+        navigate('/mentor');
+        break;
+      case 'hr':
+        navigate('/analytics');
+        break;
+      case 'mentee':
+      case 'admin':
+      default:
+        navigate('/dashboard');
+        break;
+    }
+  };
 
   return (
     <aside className="w-64 bg-white border-r border-slate-200 flex flex-col h-screen sticky top-0 shrink-0">
@@ -79,14 +99,13 @@ export function Sidebar() {
           </label>
           <select 
             value={role} 
-            onChange={(e) => setRole(e.target.value as Role)}
+            onChange={(e) => handleRoleChange(e.target.value as Role)}
             className="w-full bg-slate-50 border border-slate-200 text-slate-700 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2"
           >
             <option value="mentee">Mentee (Learner)</option>
             <option value="mentor">Mentor (Teacher)</option>
             <option value="hr">HR/Admin (Manager)</option>
             <option value="admin">Super Admin</option>
-            <option value="guest">Guest</option>
           </select>
         </div>
 
@@ -99,14 +118,14 @@ export function Sidebar() {
         </Link>
         <div className="mt-2 flex items-center gap-3 p-2 bg-slate-50 rounded-xl">
           <img
-            src="https://picsum.photos/seed/alex/100/100"
-            alt="User"
+            src={user.avatar}
+            alt={user.name}
             className="size-10 rounded-full object-cover border-2 border-primary/20"
             referrerPolicy="no-referrer"
           />
           <div className="overflow-hidden">
-            <p className="text-sm font-bold text-slate-900 truncate">Alex Rivera</p>
-            <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider">{role.toUpperCase()}</p>
+            <p className="text-sm font-bold text-slate-900 truncate">{user.name}</p>
+            <p className="text-[10px] text-slate-500 font-medium uppercase tracking-wider">{user.position}</p>
           </div>
         </div>
       </div>

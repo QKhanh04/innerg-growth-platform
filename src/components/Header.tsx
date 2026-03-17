@@ -1,12 +1,14 @@
 import React from 'react';
 import { Bell, Search, MessageSquare } from 'lucide-react';
 import { cn } from '@/src/lib/utils';
+import { useRole } from '@/src/lib/RoleContext';
 
 interface HeaderProps {
   title?: string;
 }
 
 export function Header({ title }: HeaderProps) {
+  const { user } = useRole();
   return (
     <header className="h-16 border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-10 px-8 flex items-center justify-between">
       <div className="flex-1 max-w-md">
@@ -35,13 +37,13 @@ export function Header({ title }: HeaderProps) {
         <div className="h-8 w-px bg-slate-200 mx-2"></div>
         <div className="flex items-center gap-3">
           <div className="text-right hidden sm:block">
-            <p className="text-sm font-bold leading-none">Alex Rivera</p>
-            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter mt-1">Mentee</p>
+            <p className="text-sm font-bold leading-none">{user.name}</p>
+            <p className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter mt-1">{user.position}</p>
           </div>
           <div className="size-10 rounded-full border-2 border-primary/20 p-0.5 bg-white shadow-sm">
             <img
-              src="https://picsum.photos/seed/alex/100/100"
-              alt="Profile"
+              src={user.avatar}
+              alt={user.name}
               className="size-full rounded-full object-cover"
               referrerPolicy="no-referrer"
             />

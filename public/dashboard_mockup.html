@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerG Mentee Dashboard Mockup (Refined Hero & Details)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0F1F3D;
+            --navy-light: #162040;
+            --teal: #00C896;
+            --bg: #F0F2F7;
+            --white: #FFFFFF;
+            --slate-border: #94A3B8;
+            --muted-bg: #F8FAFC;
+            --text-main: #0F1F3D;
+            --text-muted: #64748B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* SECTION 1 - HERO (REFINED/SMALLER) */
+        .hero {
+            background-color: var(--navy);
+            border-radius: 32px;
+            overflow: hidden;
+            display: flex;
+            min-height: 320px;
+            box-shadow: 0 25px 50px -12px rgba(15, 31, 61, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-left {
+            flex: 0.6;
+            padding: 32px 40px;
+            position: relative;
+        }
+
+        .badge-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 200, 150, 0.1);
+            border: 1px solid rgba(0, 200, 150, 0.2);
+            padding: 6px 14px;
+            border-radius: 100px;
+            color: var(--teal);
+            font-size: 9px;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero-right {
+            flex: 0.4;
+            background-color: var(--navy-light);
+            padding: 32px 40px;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--teal);
+            color: var(--navy);
+            border: none;
+            padding: 14px 24px;
+            border-radius: 16px;
+            font-weight: 900;
+            font-size: 13px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 200, 150, 0.3);
+        }
+
+        .actions-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-info {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            border-radius: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* GRID */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.75fr 1fr;
+            gap: 40px;
+        }
+
+        /* ROADMAP */
+        .roadmap-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #F1F5F9;
+        }
+
+        .btn-roadmap {
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 900;
+            cursor: pointer;
+            border: 1px solid var(--teal);
+            background: transparent;
+            color: var(--teal);
+        }
+
+        .btn-roadmap-info {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            padding: 8px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        /* TOAST */
+        .toast {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--navy);
+            color: var(--teal);
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 900;
+            font-size: 13px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 200, 150, 0.2);
+            display: none; /* Hidden by default in mockup */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-left">
+                <div class="badge-live">LIVE IN 2H 45M</div>
+                <h1 class="hero-title">Advanced Product Strategy Masterclass</h1>
+                <div class="hero-meta">
+                    <span>📍 Room 402 • HQ</span>
+                    <span>👥 42/50 Joined</span>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="actions-row">
+                    <button class="btn-primary" onclick="showToast()">Đăng ký ngay</button>
+                    <button class="btn-info" title="Xem chi tiết">ℹ️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-grid">
+            <div class="column-left">
+                <h2 style="font-size: 24px; font-weight: 900; margin-bottom: 32px;">Weekly Roadmap</h2>
+                
+                <div class="roadmap-item">
+                    <div style="flex: 1;">
+                        <div style="font-size: 11px; font-weight: 900; color: var(--text-muted); margin-bottom: 8px;">TODAY • 10:00 AM</div>
+                        <div style="font-size: 16px; font-weight: 900; margin-bottom: 4px;">Leadership Fundamentals</div>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button class="btn-roadmap" onclick="showToast()">JOIN NOW</button>
+                        <button class="btn-roadmap-info">ℹ️</button>
+                    </div>
+                </div>
+
+                <div class="roadmap-item">
+                    <div style="flex: 1;">
+                        <div style="font-size: 11px; font-weight: 900; color: var(--text-muted); margin-bottom: 8px;">WED, SEP 23 • 01:00 PM</div>
+                        <div style="font-size: 16px; font-weight: 900; margin-bottom: 4px;">Advanced React Masterclass</div>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button class="btn-roadmap" onclick="showToast()">REMIND ME</button>
+                        <button class="btn-roadmap-info">ℹ️</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="card" style="background: var(--navy); color: var(--white); margin-bottom: 24px; padding: 24px; border-radius: 24px;">
+                    <div style="font-size: 9px; font-weight: 900; color: var(--teal); letter-spacing: 0.1em; margin-bottom: 8px;">CURRENT BALANCE</div>
+                    <div style="font-size: 32px; font-weight: 900;">1,240 <span style="font-size: 14px; color: var(--teal);">PTS</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Successfully registered! 🎉</div>
+
+    <script>
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

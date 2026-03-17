@@ -18,8 +18,10 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { cn } from '@/src/lib/utils';
+import { useRole } from '@/src/lib/RoleContext';
 
 export default function ProfilePage() {
+  const { user, role } = useRole();
   return (
     <div className="flex min-h-screen bg-background-light">
       <Sidebar />
@@ -40,8 +42,8 @@ export default function ProfilePage() {
                   <div className="relative inline-block mb-6">
                     <div className="size-40 rounded-full border-8 border-white shadow-2xl overflow-hidden bg-slate-100">
                       <img 
-                        src="https://picsum.photos/seed/alex/400/400" 
-                        alt="Profile" 
+                        src={user.avatar} 
+                        alt={user.name} 
                         className="size-full object-cover"
                         referrerPolicy="no-referrer"
                       />
@@ -51,30 +53,30 @@ export default function ProfilePage() {
                     </div>
                   </div>
 
-                  <h2 className="text-3xl font-black tracking-tight">Alex Rivera</h2>
-                  <p className="text-slate-500 font-bold mt-1">Senior Product Designer</p>
+                  <h2 className="text-3xl font-black tracking-tight">{user.name}</h2>
+                  <p className="text-slate-500 font-bold mt-1">{user.position}</p>
                   
                   <div className="flex items-center justify-center gap-2 mt-4">
-                    <span className="text-[10px] font-black bg-primary/20 text-slate-900 px-3 py-1 rounded-full uppercase tracking-widest">Mentor</span>
-                    <span className="text-[10px] font-black bg-blue-100 text-blue-700 px-3 py-1 rounded-full uppercase tracking-widest">Top Learner</span>
+                    <span className="text-[10px] font-black bg-primary/20 text-slate-900 px-3 py-1 rounded-full uppercase tracking-widest">{role}</span>
+                    <span className="text-[10px] font-black bg-blue-100 text-blue-700 px-3 py-1 rounded-full uppercase tracking-widest">{user.points > 1000 ? 'Expert' : 'Top Learner'}</span>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4 mt-8 pt-8 border-t border-slate-100">
                     <div>
-                      <p className="text-2xl font-black">1,240</p>
+                      <p className="text-2xl font-black">{user.points.toLocaleString()}</p>
                       <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Points</p>
                     </div>
                     <div>
-                      <p className="text-2xl font-black">12</p>
+                      <p className="text-2xl font-black">{user.badges}</p>
                       <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Badges</p>
                     </div>
                   </div>
 
                   <div className="mt-8 space-y-4 text-left">
-                    <InfoItem icon={Briefcase} text="Product Design Team" />
-                    <InfoItem icon={MapPin} text="San Francisco, CA" />
-                    <InfoItem icon={Mail} text="alex.r@innerg.com" />
-                    <InfoItem icon={LinkIcon} text="portfolio.alex.design" />
+                    <InfoItem icon={Briefcase} text={user.department} />
+                    <InfoItem icon={MapPin} text={user.location} />
+                    <InfoItem icon={Mail} text={user.email} />
+                    <InfoItem icon={LinkIcon} text="portfolio.innerg.com" />
                   </div>
 
                   <button className="w-full mt-8 bg-slate-900 text-white py-4 rounded-2xl text-sm font-black hover:bg-slate-800 transition-all active:scale-95">
@@ -87,17 +89,17 @@ export default function ProfilePage() {
                   <h3 className="font-black text-lg mb-6">Expertise</h3>
                   <div className="space-y-6">
                     <div>
-                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Can Teach</p>
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Skills</p>
                       <div className="flex flex-wrap gap-2">
-                        {['UI Design', 'Design Systems', 'Figma'].map(s => (
+                        {user.skills.teaching.map(s => (
                           <span key={s} className="px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-lg border border-primary/20">{s}</span>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Learning</p>
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Learning Wishlist</p>
                       <div className="flex flex-wrap gap-2">
-                        {['React.js', '3D Modeling', 'Public Speaking'].map(s => (
+                        {user.skills.learning.map(s => (
                           <span key={s} className="px-3 py-1.5 bg-slate-50 text-slate-600 text-xs font-bold rounded-lg border border-slate-100">{s}</span>
                         ))}
                       </div>
@@ -112,7 +114,7 @@ export default function ProfilePage() {
                 <section className="bg-white rounded-3xl p-10 shadow-sm border border-slate-100">
                   <h3 className="text-2xl font-black tracking-tight mb-6">About Me</h3>
                   <p className="text-slate-600 font-medium leading-relaxed text-lg">
-                    Passionate about creating intuitive digital experiences and helping others grow in their design journey. With over 8 years of experience in product design, I specialize in building scalable design systems and mentoring junior designers. Currently focusing on bridging the gap between design and front-end development.
+                    {user.about}
                   </p>
                 </section>
 
