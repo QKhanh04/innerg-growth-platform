@@ -25,7 +25,7 @@ export default function OnboardingPage() {
         </div>
         <div className="flex items-center gap-6">
           <button className="text-slate-400 hover:text-slate-600 font-bold text-sm transition-colors">Skip</button>
-          <button 
+          <button
             onClick={nextStep}
             className="flex min-w-[120px] items-center justify-center rounded-xl h-12 px-8 bg-primary text-slate-900 text-sm font-black shadow-lg shadow-primary/20 hover:brightness-105 active:scale-95 transition-all"
           >
@@ -50,7 +50,7 @@ export default function OnboardingPage() {
               <p className="text-slate-400 text-sm font-bold">{Math.round((step / 3) * 100)}% Complete</p>
             </div>
             <div className="h-2.5 w-full bg-slate-200 rounded-full overflow-hidden">
-              <motion.div 
+              <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${(step / 3) * 100}%` }}
                 className="h-full bg-primary rounded-full shadow-[0_0_10px_rgba(19,236,182,0.5)]"
@@ -96,7 +96,7 @@ function StepOne() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <InputGroup label="Full Name" placeholder="Alex Rivera" />
+        <InputGroup label="Full Name" placeholder="Nguyen Van Minh" />
         <div className="flex flex-col gap-2">
           <label className="text-sm font-bold text-slate-700">Department</label>
           <select className="w-full h-14 rounded-2xl border-slate-200 bg-slate-50 px-4 focus:border-primary focus:ring-primary font-medium outline-none transition-all">
@@ -111,9 +111,9 @@ function StepOne() {
           <label className="text-sm font-bold text-slate-700">Reporting Manager</label>
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-slate-400" />
-            <input 
-              className="w-full h-14 pl-12 rounded-2xl border-slate-200 bg-slate-50 focus:border-primary focus:ring-primary font-medium outline-none transition-all" 
-              placeholder="Search manager..." 
+            <input
+              className="w-full h-14 pl-12 rounded-2xl border-slate-200 bg-slate-50 focus:border-primary focus:ring-primary font-medium outline-none transition-all"
+              placeholder="Search manager..."
               type="text"
             />
           </div>
@@ -149,9 +149,9 @@ function StepThree() {
     <div className="bg-white rounded-3xl p-10 shadow-xl shadow-slate-200/50 border border-slate-100 flex flex-col gap-6">
       <div className="relative">
         <Plus className="absolute left-4 top-1/2 -translate-y-1/2 size-6 text-slate-400" />
-        <input 
-          className="w-full h-16 pl-14 rounded-2xl border-slate-200 bg-slate-50 focus:border-primary focus:ring-primary font-bold text-lg outline-none transition-all" 
-          placeholder="Add a skill you want to learn..." 
+        <input
+          className="w-full h-16 pl-14 rounded-2xl border-slate-200 bg-slate-50 focus:border-primary focus:ring-primary font-bold text-lg outline-none transition-all"
+          placeholder="Add a skill you want to learn..."
           type="text"
         />
       </div>
@@ -171,9 +171,9 @@ function InputGroup({ label, placeholder }: { label: string, placeholder: string
   return (
     <div className="flex flex-col gap-2">
       <label className="text-sm font-bold text-slate-700">{label}</label>
-      <input 
-        className="w-full h-14 rounded-2xl border-slate-200 bg-slate-50 px-4 focus:border-primary focus:ring-primary font-medium outline-none transition-all" 
-        placeholder={placeholder} 
+      <input
+        className="w-full h-14 rounded-2xl border-slate-200 bg-slate-50 px-4 focus:border-primary focus:ring-primary font-medium outline-none transition-all"
+        placeholder={placeholder}
         type="text"
       />
     </div>

@@ -1,14 +1,14 @@
 import React from 'react';
 import { Header } from '@/src/components/Header';
 import { Sidebar } from '@/src/components/Sidebar';
-import { 
-  Zap, 
-  Award, 
-  Trophy, 
-  ShoppingBag, 
-  ChevronRight, 
-  ArrowUpRight, 
-  Clock, 
+import {
+  Zap,
+  Award,
+  Trophy,
+  ShoppingBag,
+  ChevronRight,
+  ArrowUpRight,
+  Clock,
   Star,
   Gift,
   Search,
@@ -62,28 +62,28 @@ export default function PointsPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <RewardItem 
-                    title="Amazon Gift Card" 
-                    price="500" 
-                    image="https://picsum.photos/seed/amazon/600/400" 
+                  <RewardItem
+                    title="Amazon Gift Card"
+                    price="500"
+                    image="https://picsum.photos/seed/amazon/600/400"
                     tag="Voucher"
                   />
-                  <RewardItem 
-                    title="InnerG Hoodie (Limited)" 
-                    price="1,200" 
-                    image="https://picsum.photos/seed/hoodie/600/400" 
+                  <RewardItem
+                    title="InnerG Hoodie (Limited)"
+                    price="1,200"
+                    image="https://picsum.photos/seed/hoodie/600/400"
                     tag="Swag"
                   />
-                  <RewardItem 
-                    title="1-on-1 with CEO" 
-                    price="5,000" 
-                    image="https://picsum.photos/seed/ceo/600/400" 
+                  <RewardItem
+                    title="1-on-1 with CEO"
+                    price="5,000"
+                    image="https://picsum.photos/seed/ceo/600/400"
                     tag="Experience"
                   />
-                  <RewardItem 
-                    title="Starbucks Voucher" 
-                    price="250" 
-                    image="https://picsum.photos/seed/coffee/600/400" 
+                  <RewardItem
+                    title="Starbucks Voucher"
+                    price="250"
+                    image="https://picsum.photos/seed/coffee/600/400"
                     tag="Voucher"
                   />
                 </div>
@@ -138,8 +138,8 @@ function FilterButton({ label, active }: any) {
   return (
     <button className={cn(
       "px-5 py-2 rounded-xl text-xs font-black transition-all",
-      active 
-        ? "bg-primary text-slate-900 shadow-lg shadow-primary/20" 
+      active
+        ? "bg-primary text-slate-900 shadow-lg shadow-primary/20"
         : "bg-white border border-slate-200 text-slate-500 hover:border-primary/30 hover:text-primary"
     )}>
       {label}

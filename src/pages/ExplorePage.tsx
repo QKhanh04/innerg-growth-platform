@@ -1,15 +1,15 @@
 import React from 'react';
 import { Header } from '@/src/components/Header';
 import { Sidebar } from '@/src/components/Sidebar';
-import { 
-  Search, 
-  Filter, 
-  Star, 
-  Clock, 
-  Users, 
-  ChevronRight, 
-  Play, 
-  BookOpen, 
+import {
+  Search,
+  Filter,
+  Star,
+  Clock,
+  Users,
+  ChevronRight,
+  Play,
+  BookOpen,
   Mic,
   GraduationCap,
   Sparkles
@@ -36,13 +36,13 @@ export default function ExplorePage() {
                 </div>
                 <h2 className="text-5xl font-black tracking-tight leading-tight">What do you want to <br /> <span className="text-primary">learn today?</span></h2>
               </div>
-              
+
               <div className="flex-1 max-w-md w-full">
                 <div className="relative group">
                   <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-5 text-slate-400 group-focus-within:text-primary transition-colors" />
-                  <input 
-                    type="text" 
-                    placeholder="Search classes, skills, or mentors..." 
+                  <input
+                    type="text"
+                    placeholder="Search classes, skills, or mentors..."
                     className="w-full h-16 pl-14 pr-6 bg-white border border-slate-200 rounded-2xl text-lg font-medium outline-none focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all shadow-sm"
                   />
                 </div>
@@ -78,9 +78,9 @@ export default function ExplorePage() {
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <ClassCard 
+                <ClassCard
                   title="Mastering Figma Auto-Layout"
-                  mentor="Alex Rivera"
+                  mentor="Nguyen Van Minh"
                   mentorImg="https://picsum.photos/seed/alex/100/100"
                   rating="4.9"
                   students="1.2k"
@@ -88,7 +88,7 @@ export default function ExplorePage() {
                   image="https://picsum.photos/seed/figma/800/600"
                   tag="Design"
                 />
-                <ClassCard 
+                <ClassCard
                   title="Advanced React Patterns"
                   mentor="Sarah Chen"
                   mentorImg="https://picsum.photos/seed/sarah/100/100"
@@ -98,7 +98,7 @@ export default function ExplorePage() {
                   image="https://picsum.photos/seed/react/800/600"
                   tag="Engineering"
                 />
-                <ClassCard 
+                <ClassCard
                   title="The Art of Public Speaking"
                   mentor="Michael Scott"
                   mentorImg="https://picsum.photos/seed/michael/100/100"
@@ -118,7 +118,7 @@ export default function ExplorePage() {
                 <button className="text-primary text-sm font-bold hover:underline">View All Mentors</button>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                <MentorAvatar name="Alex R." img="https://picsum.photos/seed/alex/200/200" role="Design" />
+                <MentorAvatar name="Minh N." img="https://picsum.photos/seed/alex/200/200" role="Design" />
                 <MentorAvatar name="Sarah C." img="https://picsum.photos/seed/sarah/200/200" role="Eng" />
                 <MentorAvatar name="David K." img="https://picsum.photos/seed/david/200/200" role="Product" />
                 <MentorAvatar name="Elena M." img="https://picsum.photos/seed/elena/200/200" role="Marketing" />
@@ -132,7 +132,7 @@ export default function ExplorePage() {
               <h3 className="text-2xl font-black tracking-tight mb-8">Explore All Classes</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {Array.from({ length: 8 }).map((_, i) => (
-                  <ClassCardSmall 
+                  <ClassCardSmall
                     key={i}
                     title={`Class Title ${i + 1}`}
                     mentor="John Doe"
@@ -158,8 +158,8 @@ function FilterButton({ label, active }: any) {
   return (
     <button className={cn(
       "px-6 py-3 rounded-xl text-sm font-black transition-all",
-      active 
-        ? "bg-primary text-slate-900 shadow-lg shadow-primary/20" 
+      active
+        ? "bg-primary text-slate-900 shadow-lg shadow-primary/20"
         : "bg-white border border-slate-200 text-slate-500 hover:border-primary/30 hover:text-primary"
     )}>
       {label}

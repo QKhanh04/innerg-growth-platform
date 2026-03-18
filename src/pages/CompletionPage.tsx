@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Header } from '@/src/components/Header';
 import { Sidebar } from '@/src/components/Sidebar';
-import { 
-  Trophy, 
-  Star, 
-  ChevronRight, 
-  Zap, 
-  Award, 
-  Share2, 
+import {
+  Trophy,
+  Star,
+  ChevronRight,
+  Zap,
+  Award,
+  Share2,
   Download,
   CheckCircle2,
   MessageSquare,
@@ -32,7 +32,7 @@ export default function CompletionPage() {
           <div className="max-w-4xl mx-auto">
             <AnimatePresence mode="wait">
               {!submitted ? (
-                <motion.div 
+                <motion.div
                   key="form"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -41,7 +41,7 @@ export default function CompletionPage() {
                 >
                   {/* Celebration Header */}
                   <div className="text-center space-y-6">
-                    <motion.div 
+                    <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: 'spring', damping: 12, stiffness: 200, delay: 0.2 }}
@@ -49,7 +49,7 @@ export default function CompletionPage() {
                     >
                       <div className="size-32 bg-primary rounded-[40px] flex items-center justify-center text-slate-900 shadow-2xl shadow-primary/40 relative">
                         <Trophy className="size-16" />
-                        <motion.div 
+                        <motion.div
                           animate={{ rotate: 360 }}
                           transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
                           className="absolute inset-0 border-4 border-dashed border-slate-900/20 rounded-[40px]"
@@ -57,24 +57,24 @@ export default function CompletionPage() {
                       </div>
                     </motion.div>
                     <div className="space-y-2">
-                      <h2 className="text-5xl font-black tracking-tight">Congratulations, Alex!</h2>
+                      <h2 className="text-5xl font-black tracking-tight">Congratulations, Minh!</h2>
                       <p className="text-slate-500 text-xl font-medium">You've successfully completed <span className="text-slate-900 font-black">Mastering Figma Auto-Layout</span></p>
                     </div>
                   </div>
 
                   {/* Rewards Summary */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <RewardCard 
-                      icon={Zap} 
-                      value="+250" 
-                      label="Points Earned" 
-                      color="primary" 
+                    <RewardCard
+                      icon={Zap}
+                      value="+250"
+                      label="Points Earned"
+                      color="primary"
                     />
-                    <RewardCard 
-                      icon={Award} 
-                      value="Design Guru" 
-                      label="Badge Unlocked" 
-                      color="blue" 
+                    <RewardCard
+                      icon={Award}
+                      value="Design Guru"
+                      label="Badge Unlocked"
+                      color="blue"
                     />
                   </div>
 
@@ -82,23 +82,23 @@ export default function CompletionPage() {
                   <div className="bg-white rounded-[40px] p-10 border border-slate-200 shadow-xl shadow-slate-200/50 space-y-10">
                     <div className="text-center space-y-2">
                       <h3 className="text-2xl font-black">How was your experience?</h3>
-                      <p className="text-slate-500 font-medium">Your feedback helps Alex Rivera improve his teaching</p>
+                      <p className="text-slate-500 font-medium">Your feedback helps Nguyen Van Minh improve his teaching</p>
                     </div>
 
                     {/* Star Rating */}
                     <div className="flex justify-center gap-4">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <button 
+                        <button
                           key={star}
                           onClick={() => setRating(star)}
                           onMouseEnter={() => setRating(star)}
                           className="transition-transform hover:scale-125 active:scale-95"
                         >
-                          <Star 
+                          <Star
                             className={cn(
                               "size-12 transition-colors",
                               star <= rating ? "text-amber-500 fill-current" : "text-slate-200"
-                            )} 
+                            )}
                           />
                         </button>
                       ))}
@@ -107,7 +107,7 @@ export default function CompletionPage() {
                     {/* Text Feedback */}
                     <div className="space-y-4">
                       <label className="text-sm font-black text-slate-400 uppercase tracking-widest">Write a review (Optional)</label>
-                      <textarea 
+                      <textarea
                         value={feedback}
                         onChange={(e) => setFeedback(e.target.value)}
                         placeholder="What did you like most about this class?"
@@ -116,7 +116,7 @@ export default function CompletionPage() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <button 
+                      <button
                         onClick={() => setSubmitted(true)}
                         className="flex-1 bg-primary text-slate-900 py-5 rounded-2xl font-black text-lg shadow-xl shadow-primary/20 hover:brightness-105 transition-all active:scale-95"
                       >
@@ -129,7 +129,7 @@ export default function CompletionPage() {
                   </div>
                 </motion.div>
               ) : (
-                <motion.div 
+                <motion.div
                   key="success"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}

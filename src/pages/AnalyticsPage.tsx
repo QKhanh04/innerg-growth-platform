@@ -1,13 +1,13 @@
 import React from 'react';
 import { Header } from '@/src/components/Header';
 import { Sidebar } from '@/src/components/Sidebar';
-import { 
-  BarChart3, 
-  Users, 
-  GraduationCap, 
-  Clock, 
-  TrendingUp, 
-  TrendingDown, 
+import {
+  BarChart3,
+  Users,
+  GraduationCap,
+  Clock,
+  TrendingUp,
+  TrendingDown,
   ChevronRight,
   Download,
   Filter,
@@ -55,37 +55,37 @@ export default function AnalyticsPage() {
 
             {/* High-Level Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              <AnalyticsStatCard 
-                label="Total Classes" 
-                value="156" 
-                trend="+12%" 
-                isUp={true} 
-                icon={GraduationCap} 
-                color="blue" 
+              <AnalyticsStatCard
+                label="Total Classes"
+                value="156"
+                trend="+12%"
+                isUp={true}
+                icon={GraduationCap}
+                color="blue"
               />
-              <AnalyticsStatCard 
-                label="Active Learners" 
-                value="2,450" 
-                trend="+8%" 
-                isUp={true} 
-                icon={Users} 
-                color="primary" 
+              <AnalyticsStatCard
+                label="Active Learners"
+                value="2,450"
+                trend="+8%"
+                isUp={true}
+                icon={Users}
+                color="primary"
               />
-              <AnalyticsStatCard 
-                label="Learning Hours" 
-                value="12.8k" 
-                trend="-2%" 
-                isUp={false} 
-                icon={Clock} 
-                color="amber" 
+              <AnalyticsStatCard
+                label="Learning Hours"
+                value="12.8k"
+                trend="-2%"
+                isUp={false}
+                icon={Clock}
+                color="amber"
               />
-              <AnalyticsStatCard 
-                label="Cost Saved" 
-                value="$45.2k" 
-                trend="+24%" 
-                isUp={true} 
-                icon={ShieldCheck} 
-                color="emerald" 
+              <AnalyticsStatCard
+                label="Cost Saved"
+                value="$45.2k"
+                trend="+24%"
+                isUp={true}
+                icon={ShieldCheck}
+                color="emerald"
               />
             </div>
 
@@ -113,7 +113,7 @@ export default function AnalyticsPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="relative h-72 w-full mt-4 group">
                     {/* Y-Axis Labels */}
                     <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-[10px] font-black text-slate-300 pointer-events-none">
@@ -149,9 +149,9 @@ export default function AnalyticsPage() {
                             transition={{ delay: (i * 0.05) + 0.2, duration: 0.8, ease: "easeOut" }}
                             className="absolute bottom-0 left-0 right-0 bg-primary/20 group-hover/bar:bg-primary/30 transition-colors rounded-t-lg overflow-hidden"
                           >
-                             <div className="absolute top-0 left-0 right-0 h-1 bg-primary/40" />
+                            <div className="absolute top-0 left-0 right-0 h-1 bg-primary/40" />
                           </motion.div>
-                          
+
                           {/* Indicator line on hover */}
                           <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-[10px] font-black px-2 py-1 rounded opacity-0 group-hover/bar:opacity-100 transition-all pointer-events-none z-20">
                             {h}%
@@ -184,9 +184,9 @@ export default function AnalyticsPage() {
 
                     {/* X-Axis Labels */}
                     <div className="absolute left-10 right-0 bottom-0 h-6 flex justify-between px-2">
-                       {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map((m) => (
-                         <span key={m} className="flex-1 text-center text-[10px] font-black text-slate-400 uppercase tracking-tighter self-center">{m}</span>
-                       ))}
+                      {['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'].map((m) => (
+                        <span key={m} className="flex-1 text-center text-[10px] font-black text-slate-400 uppercase tracking-tighter self-center">{m}</span>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ export default function AnalyticsPage() {
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-50">
-                        <MentorRow name="Alex Rivera" dept="Design" classes={12} rating="4.9" points="8,450" />
+                        <MentorRow name="Nguyen Van Minh" dept="Design" classes={12} rating="4.9" points="8,450" />
                         <MentorRow name="Sarah Chen" dept="Engineering" classes={8} rating="4.8" points="6,200" />
                         <MentorRow name="David Kim" dept="Product" classes={15} rating="5.0" points="12,100" />
                       </tbody>
@@ -238,7 +238,7 @@ export default function AnalyticsPage() {
                     {['Design', 'Eng.', 'Product', 'Sales', 'HR'].map(d => (
                       <div key={d} className="text-center text-[10px] font-black text-slate-400 uppercase py-2">{d}</div>
                     ))}
-                    
+
                     {/* Rows */}
                     {['Figma', 'React', 'Node.js', 'Stats', 'Agile'].map((skill, ridx) => (
                       <React.Fragment key={skill}>
@@ -259,7 +259,7 @@ export default function AnalyticsPage() {
                                 opacity === 3 && "bg-primary text-white"
                               )}
                             >
-                               {Math.floor(Math.random() * 20) + 5}%
+                              {Math.floor(Math.random() * 20) + 5}%
                             </motion.div>
                           );
                         })}
@@ -301,18 +301,18 @@ export default function AnalyticsPage() {
                     <div className="relative size-48 mx-auto flex items-center justify-center">
                       <svg className="size-full -rotate-90">
                         <circle cx="96" cy="96" r="80" fill="none" stroke="#f1f5f9" strokeWidth="20" />
-                        <motion.circle 
-                          cx="96" cy="96" r="80" 
-                          fill="none" stroke="#13ecb6" strokeWidth="20" 
+                        <motion.circle
+                          cx="96" cy="96" r="80"
+                          fill="none" stroke="#13ecb6" strokeWidth="20"
                           strokeDasharray="502"
                           initial={{ strokeDashoffset: 502 }}
                           animate={{ strokeDashoffset: 502 * (1 - 0.72) }}
                           transition={{ duration: 1.5, delay: 0.5 }}
                           strokeLinecap="round"
                         />
-                        <motion.circle 
-                          cx="96" cy="96" r="80" 
-                          fill="none" stroke="#6366f1" strokeWidth="20" 
+                        <motion.circle
+                          cx="96" cy="96" r="80"
+                          fill="none" stroke="#6366f1" strokeWidth="20"
                           strokeDasharray="502"
                           initial={{ strokeDashoffset: 502 }}
                           animate={{ strokeDashoffset: 502 * (1 - 0.35) }}
@@ -321,20 +321,20 @@ export default function AnalyticsPage() {
                         />
                       </svg>
                       <div className="absolute text-center">
-                         <p className="text-3xl font-black text-slate-900">72%</p>
-                         <p className="text-[10px] font-black text-slate-400 uppercase">Avg. Growth</p>
+                        <p className="text-3xl font-black text-slate-900">72%</p>
+                        <p className="text-[10px] font-black text-slate-400 uppercase">Avg. Growth</p>
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-2 gap-4">
-                       <div className="flex items-center gap-2">
-                          <div className="size-2 rounded-full bg-primary" />
-                          <span className="text-[10px] font-black text-slate-600 uppercase">Eng: 72%</span>
-                       </div>
-                       <div className="flex items-center gap-2">
-                          <div className="size-2 rounded-full bg-indigo-500" />
-                          <span className="text-[10px] font-black text-slate-600 uppercase">Design: 85%</span>
-                       </div>
+                      <div className="flex items-center gap-2">
+                        <div className="size-2 rounded-full bg-primary" />
+                        <span className="text-[10px] font-black text-slate-600 uppercase">Eng: 72%</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="size-2 rounded-full bg-indigo-500" />
+                        <span className="text-[10px] font-black text-slate-600 uppercase">Design: 85%</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -418,7 +418,7 @@ function CoverageItem({ label, percent }: any) {
         <span className="text-primary">{percent}%</span>
       </div>
       <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
-        <motion.div 
+        <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${percent}%` }}
           className="h-full bg-primary rounded-full shadow-[0_0_10px_rgba(19,236,182,0.5)]"

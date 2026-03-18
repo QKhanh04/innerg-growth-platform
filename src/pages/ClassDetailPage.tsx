@@ -1,15 +1,15 @@
 import React from 'react';
 import { Header } from '@/src/components/Header';
 import { Sidebar } from '@/src/components/Sidebar';
-import { 
-  Play, 
-  Clock, 
-  Users, 
-  Star, 
-  FileText, 
-  Download, 
-  ChevronRight, 
-  CheckCircle2, 
+import {
+  Play,
+  Clock,
+  Users,
+  Star,
+  FileText,
+  Download,
+  ChevronRight,
+  CheckCircle2,
   MessageSquare,
   Calendar,
   ArrowLeft,
@@ -30,21 +30,21 @@ export default function ClassDetailPage() {
         <div className="flex-1 overflow-y-auto">
           {/* Hero Section */}
           <div className="relative h-[500px] bg-slate-900 overflow-hidden">
-            <img 
-              src="https://picsum.photos/seed/figma/1920/1080" 
-              alt="Class Hero" 
+            <img
+              src="https://picsum.photos/seed/figma/1920/1080"
+              alt="Class Hero"
               className="absolute inset-0 size-full object-cover opacity-40"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
-            
+
             <div className="absolute inset-0 flex items-center">
               <div className="max-w-7xl mx-auto px-8 lg:px-12 w-full">
                 <Link to="/explore" className="flex items-center gap-2 text-white/60 hover:text-primary transition-colors mb-8 font-bold text-sm">
                   <ArrowLeft className="size-4" />
                   Back to Explore
                 </Link>
-                
+
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
                   <div className="max-w-3xl space-y-6">
                     <div className="flex items-center gap-3">
@@ -68,7 +68,7 @@ export default function ClassDetailPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center gap-4">
                     <button className="p-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl backdrop-blur-md border border-white/20 transition-all">
                       <Share2 className="size-6" />
@@ -98,33 +98,33 @@ export default function ClassDetailPage() {
                 <section className="space-y-6">
                   <h3 className="text-2xl font-black tracking-tight">Course Syllabus</h3>
                   <div className="space-y-4">
-                    <SyllabusItem 
-                      number="01" 
-                      title="Introduction to Auto-Layout" 
-                      duration="15:00" 
+                    <SyllabusItem
+                      number="01"
+                      title="Introduction to Auto-Layout"
+                      duration="15:00"
                       isCompleted={true}
                     />
-                    <SyllabusItem 
-                      number="02" 
-                      title="Understanding Constraints & Resizing" 
-                      duration="25:40" 
+                    <SyllabusItem
+                      number="02"
+                      title="Understanding Constraints & Resizing"
+                      duration="25:40"
                       isCompleted={true}
                     />
-                    <SyllabusItem 
-                      number="03" 
-                      title="Building Complex Components" 
-                      duration="45:15" 
+                    <SyllabusItem
+                      number="03"
+                      title="Building Complex Components"
+                      duration="45:15"
                       isActive={true}
                     />
-                    <SyllabusItem 
-                      number="04" 
-                      title="Variants & Component Properties" 
-                      duration="35:20" 
+                    <SyllabusItem
+                      number="04"
+                      title="Variants & Component Properties"
+                      duration="35:20"
                     />
-                    <SyllabusItem 
-                      number="05" 
-                      title="Interactive Components & Prototyping" 
-                      duration="28:10" 
+                    <SyllabusItem
+                      number="05"
+                      title="Interactive Components & Prototyping"
+                      duration="28:10"
                     />
                   </div>
                 </section>
@@ -139,7 +139,7 @@ export default function ClassDetailPage() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h4 className="text-2xl font-black">Alex Rivera</h4>
+                          <h4 className="text-2xl font-black">Nguyen Van Minh</h4>
                           <p className="text-slate-500 font-bold">Senior Product Designer @ InnerG</p>
                         </div>
                         <button className="px-6 py-3 bg-primary/10 text-primary rounded-xl text-sm font-black hover:bg-primary hover:text-slate-900 transition-all">

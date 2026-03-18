@@ -29,7 +29,7 @@ const RoleContext = createContext<RoleContextProps | undefined>(undefined);
 
 const roleProfiles: Record<Role, UserProfile> = {
   mentee: {
-    name: 'Alex Rivera',
+    name: 'Nguyen Van Minh',
     role: 'mentee',
     position: 'Junior Product Designer',
     avatar: 'https://picsum.photos/seed/alex/400/400',
