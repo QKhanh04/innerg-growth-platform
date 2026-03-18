@@ -272,7 +272,7 @@ export default function SchedulePage() {
                     />
                     <PendingWorkshop
                       title="Product Strategy 101"
-                      requestedBy="Sarah (PM)"
+                      requestedBy="Thu Ha (PM)"
                       mentees={5}
                       priority="Normal"
                     />

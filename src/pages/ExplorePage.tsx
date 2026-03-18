@@ -90,8 +90,8 @@ export default function ExplorePage() {
                 />
                 <ClassCard 
                   title="Advanced React Patterns"
-                  mentor="Sarah Chen"
-                  mentorImg="https://picsum.photos/seed/sarah/100/100"
+                  mentor="Tran Thu Ha"
+                  mentorImg="https://picsum.photos/seed/ha/100/100"
                   rating="4.8"
                   students="856"
                   duration="4h 15m"
@@ -100,8 +100,8 @@ export default function ExplorePage() {
                 />
                 <ClassCard 
                   title="The Art of Public Speaking"
-                  mentor="Michael Scott"
-                  mentorImg="https://picsum.photos/seed/michael/100/100"
+                  mentor="Pham Quoc Huy"
+                  mentorImg="https://picsum.photos/seed/huy/100/100"
                   rating="5.0"
                   students="2.4k"
                   duration="1h 45m"
@@ -119,11 +119,11 @@ export default function ExplorePage() {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
                 <MentorAvatar name="D. Khanh Hoa" img="https://picsum.photos/seed/alex/200/200" role="Design" />
-                <MentorAvatar name="Sarah C." img="https://picsum.photos/seed/sarah/200/200" role="Eng" />
-                <MentorAvatar name="David K." img="https://picsum.photos/seed/david/200/200" role="Product" />
-                <MentorAvatar name="Elena M." img="https://picsum.photos/seed/elena/200/200" role="Marketing" />
-                <MentorAvatar name="James W." img="https://picsum.photos/seed/james/200/200" role="Sales" />
-                <MentorAvatar name="Lisa P." img="https://picsum.photos/seed/lisa/200/200" role="HR" />
+                <MentorAvatar name="Thu Ha T." img="https://picsum.photos/seed/ha/200/200" role="Eng" />
+                <MentorAvatar name="Van Hai L." img="https://picsum.photos/seed/hai/200/200" role="Product" />
+                <MentorAvatar name="Thanh Mai N." img="https://picsum.photos/seed/mai/200/200" role="Marketing" />
+                <MentorAvatar name="Quang Tuan D." img="https://picsum.photos/seed/tuan/200/200" role="Sales" />
+                <MentorAvatar name="Tuyet Lan V." img="https://picsum.photos/seed/lan/200/200" role="HR" />
               </div>
             </section>
 
@@ -135,7 +135,7 @@ export default function ExplorePage() {
                   <ClassCardSmall 
                     key={i}
                     title={`Class Title ${i + 1}`}
-                    mentor="John Doe"
+                    mentor="Phan Thanh Nam"
                     rating="4.7"
                     image={`https://picsum.photos/seed/class${i}/400/300`}
                   />

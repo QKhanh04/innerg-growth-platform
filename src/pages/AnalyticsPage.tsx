@@ -210,8 +210,8 @@ export default function AnalyticsPage() {
                       </thead>
                       <tbody className="divide-y divide-slate-50">
                         <MentorRow name="Duong Khanh Hoa" dept="Design" classes={12} rating="4.9" points="8,450" />
-                        <MentorRow name="Sarah Chen" dept="Engineering" classes={8} rating="4.8" points="6,200" />
-                        <MentorRow name="David Kim" dept="Product" classes={15} rating="5.0" points="12,100" />
+                        <MentorRow name="Tran Thu Ha" dept="Engineering" classes={8} rating="4.8" points="6,200" />
+                        <MentorRow name="Le Van Hai" dept="Product" classes={15} rating="5.0" points="12,100" />
                       </tbody>
                     </table>
                   </div>

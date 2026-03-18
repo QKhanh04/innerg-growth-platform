@@ -101,10 +101,10 @@ export default function PointsPage() {
                     <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">This Month</span>
                   </div>
                   <div className="space-y-6">
-                    <LeaderboardItem rank={1} name="Sarah Chen" points="4,250" img="https://picsum.photos/seed/sarah/100/100" />
+                    <LeaderboardItem rank={1} name="Tran Thu Ha" points="4,250" img="https://picsum.photos/seed/ha/100/100" />
                     <LeaderboardItem rank={2} name="Duong Khanh Hoa" points="3,890" img="https://picsum.photos/seed/alex/100/100" isUser />
-                    <LeaderboardItem rank={3} name="David Kim" points="3,420" img="https://picsum.photos/seed/david/100/100" />
-                    <LeaderboardItem rank={4} name="Elena Martinez" points="3,100" img="https://picsum.photos/seed/elena/100/100" />
+                    <LeaderboardItem rank={3} name="Le Van Hai" points="3,420" img="https://picsum.photos/seed/hai/100/100" />
+                    <LeaderboardItem rank={4} name="Nguyen Thanh Mai" points="3,100" img="https://picsum.photos/seed/mai/100/100" />
                   </div>
                   <button className="w-full mt-8 py-4 border-2 border-slate-100 rounded-2xl text-sm font-black text-slate-400 hover:border-primary/30 hover:text-primary transition-all">
                     View Full Rankings

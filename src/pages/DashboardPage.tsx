@@ -194,7 +194,7 @@ export default function DashboardPage() {
                         date="FRI, SEP 25"
                         time="02:30 PM"
                         title="Mentorship Strategy Session"
-                        instructor="Sarah Chen"
+                        instructor="Tran Thu Ha"
                         status="upcoming"
                         category="1-on-1"
                         onViewDetails={(item: any) => setSelectedWorkshop(item)}
@@ -304,7 +304,7 @@ export default function DashboardPage() {
                      stats="4.7 ★ • 6 Modules • ~2h"
                      category="Soft Skill"
                      accent="orange"
-                     mentor="Sarah Chen"
+                     mentor="Tran Thu Ha"
                      onViewDetails={(item: any) => setSelectedWorkshop(item)}
                      onRegister={handleRegister}
                   />
@@ -313,7 +313,7 @@ export default function DashboardPage() {
                      stats="4.9 ★ • 10 Modules • ~5h"
                      category="Technical"
                      accent="green"
-                     mentor="John Doe"
+                     mentor="Phan Thanh Nam"
                      onViewDetails={(item: any) => setSelectedWorkshop(item)}
                      onRegister={handleRegister}
                   />

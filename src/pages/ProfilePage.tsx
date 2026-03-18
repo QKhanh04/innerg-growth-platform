@@ -138,7 +138,7 @@ export default function ProfilePage() {
                       icon={MessageSquare}
                       title="Received a 5-star review"
                       time="1 week ago"
-                      description="From Sarah Chen: 'Alex is an incredible mentor. The Figma workshop was a game-changer!'"
+                      description="From Tran Thu Ha: 'Hoa is an incredible mentor. The Figma workshop was a game-changer!'"
                     />
                     <ActivityCard 
                       icon={CheckCircle2}

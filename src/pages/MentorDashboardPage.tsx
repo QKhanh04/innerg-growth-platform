@@ -130,9 +130,9 @@ export default function MentorDashboardPage() {
                     <span className="text-[10px] font-black bg-amber-100 text-amber-700 px-2 py-1 rounded-full">4 New</span>
                   </div>
                   <div className="space-y-6">
-                    <ApprovalItem name="Sarah Chen" class="Advanced Figma" time="2h ago" />
-                    <ApprovalItem name="David Kim" class="Advanced Figma" time="5h ago" />
-                    <ApprovalItem name="Elena Martinez" class="Design Systems" time="Yesterday" />
+                    <ApprovalItem name="Tran Thu Ha" class="Advanced Figma" time="2h ago" />
+                    <ApprovalItem name="Le Van Hai" class="Advanced Figma" time="5h ago" />
+                    <ApprovalItem name="Nguyen Thanh Mai" class="Design Systems" time="Yesterday" />
                   </div>
                   <button className="w-full mt-8 py-4 border-2 border-slate-100 rounded-2xl text-sm font-black text-slate-400 hover:border-primary/30 hover:text-primary transition-all">
                     Review All Requests
