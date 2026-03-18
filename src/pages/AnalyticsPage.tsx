@@ -209,7 +209,7 @@ export default function AnalyticsPage() {
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-50">
-                        <MentorRow name="Alex Rivera" dept="Design" classes={12} rating="4.9" points="8,450" />
+                        <MentorRow name="Duong Khanh Hoa" dept="Design" classes={12} rating="4.9" points="8,450" />
                         <MentorRow name="Sarah Chen" dept="Engineering" classes={8} rating="4.8" points="6,200" />
                         <MentorRow name="David Kim" dept="Product" classes={15} rating="5.0" points="12,100" />
                       </tbody>

@@ -102,7 +102,7 @@ export default function PointsPage() {
                   </div>
                   <div className="space-y-6">
                     <LeaderboardItem rank={1} name="Sarah Chen" points="4,250" img="https://picsum.photos/seed/sarah/100/100" />
-                    <LeaderboardItem rank={2} name="Alex Rivera" points="3,890" img="https://picsum.photos/seed/alex/100/100" isUser />
+                    <LeaderboardItem rank={2} name="Duong Khanh Hoa" points="3,890" img="https://picsum.photos/seed/alex/100/100" isUser />
                     <LeaderboardItem rank={3} name="David Kim" points="3,420" img="https://picsum.photos/seed/david/100/100" />
                     <LeaderboardItem rank={4} name="Elena Martinez" points="3,100" img="https://picsum.photos/seed/elena/100/100" />
                   </div>

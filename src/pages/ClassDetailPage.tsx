@@ -139,7 +139,7 @@ export default function ClassDetailPage() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h4 className="text-2xl font-black">Alex Rivera</h4>
+                          <h4 className="text-2xl font-black">Duong Khanh Hoa</h4>
                           <p className="text-slate-500 font-bold">Senior Product Designer @ InnerG</p>
                         </div>
                         <button className="px-6 py-3 bg-primary/10 text-primary rounded-xl text-sm font-black hover:bg-primary hover:text-slate-900 transition-all">
@@ -147,7 +147,7 @@ export default function ClassDetailPage() {
                         </button>
                       </div>
                       <p className="text-slate-600 font-medium leading-relaxed mb-6">
-                        Alex has over 8 years of experience in product design and has built design systems for some of the world's leading tech companies. He's passionate about Figma and helping designers work more efficiently.
+                        Duong Khanh Hoa has over 8 years of experience in product design and has built design systems for some of the world's leading tech companies. He's passionate about Figma and helping designers work more efficiently.
                       </p>
                       <div className="flex gap-8">
                         <div className="text-center">

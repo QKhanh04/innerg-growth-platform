@@ -96,7 +96,7 @@ function StepOne() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <InputGroup label="Full Name" placeholder="Alex Rivera" />
+        <InputGroup label="Full Name" placeholder="Duong Khanh Hoa" />
         <div className="flex flex-col gap-2">
           <label className="text-sm font-bold text-slate-700">Department</label>
           <select className="w-full h-14 rounded-2xl border-slate-200 bg-slate-50 px-4 focus:border-primary focus:ring-primary font-medium outline-none transition-all">

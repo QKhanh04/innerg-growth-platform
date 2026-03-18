@@ -29,13 +29,13 @@ const RoleContext = createContext<RoleContextProps | undefined>(undefined);
 
 const roleProfiles: Record<Role, UserProfile> = {
   mentee: {
-    name: 'Alex Rivera',
+    name: 'Duong Khanh Hoa',
     role: 'mentee',
     position: 'Junior Product Designer',
     avatar: 'https://picsum.photos/seed/alex/400/400',
     department: 'Product Design Team',
-    location: 'San Francisco, CA',
-    email: 'alex.r@innerg.com',
+    location: 'Ho Chi Minh City, VN',
+    email: 'hoa.dk@innerg.com',
     points: 450,
     badges: 4,
     skills: {

@@ -57,7 +57,7 @@ export default function CompletionPage() {
                       </div>
                     </motion.div>
                     <div className="space-y-2">
-                      <h2 className="text-5xl font-black tracking-tight">Congratulations, Alex!</h2>
+                      <h2 className="text-5xl font-black tracking-tight">Congratulations, Khanh Hoa!</h2>
                       <p className="text-slate-500 text-xl font-medium">You've successfully completed <span className="text-slate-900 font-black">Mastering Figma Auto-Layout</span></p>
                     </div>
                   </div>
@@ -82,7 +82,7 @@ export default function CompletionPage() {
                   <div className="bg-white rounded-[40px] p-10 border border-slate-200 shadow-xl shadow-slate-200/50 space-y-10">
                     <div className="text-center space-y-2">
                       <h3 className="text-2xl font-black">How was your experience?</h3>
-                      <p className="text-slate-500 font-medium">Your feedback helps Alex Rivera improve his teaching</p>
+                      <p className="text-slate-500 font-medium">Your feedback helps Duong Khanh Hoa improve his teaching</p>
                     </div>
 
                     {/* Star Rating */}

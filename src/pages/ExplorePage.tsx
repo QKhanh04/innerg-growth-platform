@@ -80,7 +80,7 @@ export default function ExplorePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <ClassCard 
                   title="Mastering Figma Auto-Layout"
-                  mentor="Alex Rivera"
+                  mentor="Duong Khanh Hoa"
                   mentorImg="https://picsum.photos/seed/alex/100/100"
                   rating="4.9"
                   students="1.2k"
@@ -118,7 +118,7 @@ export default function ExplorePage() {
                 <button className="text-primary text-sm font-bold hover:underline">View All Mentors</button>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-                <MentorAvatar name="Alex R." img="https://picsum.photos/seed/alex/200/200" role="Design" />
+                <MentorAvatar name="D. Khanh Hoa" img="https://picsum.photos/seed/alex/200/200" role="Design" />
                 <MentorAvatar name="Sarah C." img="https://picsum.photos/seed/sarah/200/200" role="Eng" />
                 <MentorAvatar name="David K." img="https://picsum.photos/seed/david/200/200" role="Product" />
                 <MentorAvatar name="Elena M." img="https://picsum.photos/seed/elena/200/200" role="Marketing" />

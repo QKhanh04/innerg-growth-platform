@@ -174,7 +174,7 @@ export default function DashboardPage() {
                         date="TODAY"
                         time="10:00 AM"
                         title="Workshop: Leadership Fundamentals"
-                        instructor="Alex Rivera"
+                        instructor="Duong Khanh Hoa"
                         status="active"
                         category="Internal"
                         onViewDetails={(item: any) => setSelectedWorkshop(item)}
@@ -286,7 +286,7 @@ export default function DashboardPage() {
                      stats="4.8 ★ • 12 Modules • ~4h"
                      category="Technical"
                      accent="blue"
-                     mentor="Alex Rivera"
+                     mentor="Duong Khanh Hoa"
                      onViewDetails={(item: any) => setSelectedWorkshop(item)}
                      onRegister={handleRegister}
                   />
