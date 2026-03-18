@@ -136,12 +136,12 @@ export default function DashboardPage() {
                           onClick={() => handleRegister(heroWorkshop.title)}
                           className="flex-1 bg-[#00C896] hover:bg-[#00E0A8] text-[#0F1F3D] py-4 rounded-2xl font-black text-sm transition-all active:scale-95 shadow-xl shadow-[#00C896]/20 flex items-center justify-center gap-2"
                         >
-                           Đăng ký ngay <ChevronRight className="size-4" />
+                           Register Now <ChevronRight className="size-4" />
                         </button>
                         <button 
                           onClick={() => setSelectedWorkshop(heroWorkshop)}
                           className="px-5 bg-white/5 hover:bg-white/10 text-white rounded-2xl transition-all flex items-center justify-center group"
-                          title="Xem chi tiết"
+                          title="View Details"
                         >
                            <Info className="size-5 text-white/40 group-hover:text-white transition-colors" />
                         </button>
